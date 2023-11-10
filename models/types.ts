@@ -4,6 +4,7 @@ interface Comment {
   createdAt: string
   score: number
   userId: User['id']
+  replies: Comment[]
 }
 
 interface User {
