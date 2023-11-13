@@ -2,7 +2,7 @@
 import { defineProps, defineEmits } from 'vue'
 
 type Props = {
-  label: string
+  label?: string
   value: string
 }
 

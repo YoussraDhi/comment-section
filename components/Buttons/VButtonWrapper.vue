@@ -19,7 +19,7 @@ const getBackground = computed(() => {
     case 'danger':
       return 'tw-bg-red-500 hover:tw-bg-red-700  tw-text-white'
     case 'ghost':
-      return 'tw-bg-transparent hover:tw-bg-indigo-500 tw-text-indigo-700 hover:tw-text-white'
+      return 'tw-bg-transparent hover:tw-text-white'
     default:
       return 'tw-bg-indigo-600 hover:tw-bg-indigo-700'
   }
