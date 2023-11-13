@@ -13,20 +13,22 @@ const props = defineProps<Props>()
 const getBackground = computed(() => {
   switch (props.type) {
     case 'primary':
-      return 'tw-bg-indigo-600 tw-hover:bg-indigo-700'
+      return 'tw-bg-indigo-600 hover:tw-bg-indigo-700  tw-text-white'
     case 'secondary':
-      return 'tw-bg-grey-500 tw-hover:bg-grey-700'
+      return 'tw-bg-grey-500 hover:tw-bg-grey-700  tw-text-white'
     case 'danger':
-      return 'tw-bg-red-500 tw-hover:bg-red-700'
+      return 'tw-bg-red-500 hover:tw-bg-red-700  tw-text-white'
+    case 'ghost':
+      return 'tw-bg-transparent hover:tw-bg-indigo-500 tw-text-indigo-700 hover:tw-text-white'
     default:
-      return 'tw-bg-indigo-600 tw-hover:bg-indigo-700'
+      return 'tw-bg-indigo-600 hover:tw-bg-indigo-700'
   }
 })
 </script>
 
 <template>
   <button
-    :class="`${getBackground} tw-hover:bg-blue-700 tw-text-white tw-font-bold tw-py-2 tw-px-4 tw-rounded`"
+    :class="`${getBackground}  tw-font-bold tw-py-2 tw-px-4 tw-rounded`"
     @click="$emit('click', $event)"
   >
     <slot></slot>

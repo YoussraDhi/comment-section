@@ -3,8 +3,12 @@ interface Comment {
   content: string
   createdAt: string
   score: number
-  userId: User['id']
-  replies: Comment[]
+  user: User
+  replies?: Reply[]
+}
+
+interface Reply extends Comment {
+  replyingTo: string
 }
 
 interface User {
@@ -13,8 +17,10 @@ interface User {
     webp: string
   }
   username: string
-  id: number
+}
+
+interface UserWithComments extends User {
   comments: Comment[]
 }
 
-export type { User, Comment }
+export type { User, Comment, UserWithComments, Reply }
