@@ -19,7 +19,7 @@ export const comments: Comment[] = [
         png: './assets/avatars/image-amyrobson.png',
         webp: './assets/avatars/image-amyrobson.webp',
       },
-      username: 'juliusomo',
+      username: 'amyrobson',
     },
     replies: [],
   },

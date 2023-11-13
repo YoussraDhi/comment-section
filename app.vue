@@ -10,25 +10,22 @@ import { computed } from 'vue'
 function handleSend() {
   console.log('Send')
 }
-
-const getPictureUrl = computed(() => {
-  return require('./assets/avatars/cat.jpeg')
-})
-
-const getCommentFromCurrentUser = computed(() => {
-  return comments.filter(
-    (comment) => comment.user.username === currentUser.username
-  )
-})
-
-console.log(getCommentFromCurrentUser.value)
 </script>
 
 <template>
-  <div class="tw-flex tw-justify-center tw-items-center tw-m-12 tw-space-x-4">
-    <!-- <VButtonPrimary @click="handleSend"> Send </VButtonPrimary>
-    <VInputText label="TOTO" value="" />
-    <VAvatar pictureUrl="getPictureUrl" /> -->
-    <VCommentCard :comment="getCommentFromCurrentUser[0]" :user="currentUser" />
+  <div
+    v-for="comment in comments"
+    class="tw-flex tw-justify-center tw-items-center tw-m-6"
+  >
+    <div>
+      <VCommentCard :comment="comment" :user="comment.user" />
+      <div v-if="comment.replies?.length">
+        <VCommentCard
+          v-for="reply in comment.replies"
+          :comment="reply"
+          :user="reply.user"
+        />
+      </div>
+    </div>
   </div>
 </template>

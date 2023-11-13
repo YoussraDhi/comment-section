@@ -19,7 +19,9 @@ const props = defineProps({
 
 <template>
   <!-- TODO: VOTING TOOL-->
-  <div class="tw-flex tw-flex-col tw-bg-white tw-rounded-lg tw-p-4 tw-w-full">
+  <div
+    class="tw-flex tw-flex-col tw-bg-white tw-rounded-lg tw-p-4 tw-w-full tw-max-w-4xl tw-mb-4"
+  >
     <div class="tw-flex tw-justify-between tw-items-center tw-mb-4">
       <VAvatar :pictureUrl="props.user.image.png">
         <span class="tw-text-gray-700 tw-font-medium tw-text-sm">{{
