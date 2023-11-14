@@ -11,13 +11,13 @@ const props = defineProps({
     type: Object as () => User,
     required: true,
   },
-  value: {
+  modelValue: {
     type: String,
     required: true,
   },
 })
 
-defineEmits(['click'])
+const emits = defineEmits(['click', 'update:modelValue'])
 </script>
 
 <template>
@@ -35,6 +35,9 @@ defineEmits(['click'])
         Reply
       </VButtonPrimary>
     </div>
-    <VInputText :value="props.value" />
+    <VInputText
+      :model-value="props.modelValue"
+      @update:model-value="emits('update:modelValue', $event)"
+    />
   </div>
 </template>
