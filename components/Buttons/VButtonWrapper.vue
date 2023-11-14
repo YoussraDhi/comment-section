@@ -15,7 +15,7 @@ const getBackground = computed(() => {
     case 'primary':
       return 'tw-bg-indigo-600 hover:tw-bg-indigo-700  tw-text-white'
     case 'secondary':
-      return 'tw-bg-grey-500 hover:tw-bg-grey-700  tw-text-white'
+      return 'tw-bg-gray-500 hover:tw-bg-gray-600  tw-text-white'
     case 'danger':
       return 'tw-bg-red-500 hover:tw-bg-red-700  tw-text-white'
     case 'ghost':
