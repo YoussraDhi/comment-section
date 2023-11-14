@@ -2,7 +2,7 @@ import type { User, Comment } from '~/models/types'
 
 export const currentUser: User = {
   image: {
-    png: './assets/avatars/image-juliusomo.png',
+    png: '~/assets/avatars/image-juliusomo.png',
     webp: './assets/avatars/image-juliusomo.webp',
   },
   username: 'juliusomo',
@@ -16,8 +16,8 @@ export const comments: Comment[] = [
     score: 12,
     user: {
       image: {
-        png: './assets/avatars/image-amyrobson.png',
-        webp: './assets/avatars/image-amyrobson.webp',
+        png: 'avatars/image-amyrobson.png',
+        webp: 'avatars/image-amyrobson.webp',
       },
       username: 'amyrobson',
     },
@@ -31,8 +31,8 @@ export const comments: Comment[] = [
     score: 5,
     user: {
       image: {
-        png: './assets/avatars/image-maxblagun.png',
-        webp: './assets/avatars/image-maxblagun.webp',
+        png: 'avatars/image-maxblagun.png',
+        webp: 'avatars/image-maxblagun.webp',
       },
       username: 'maxblagun',
     },
@@ -46,8 +46,8 @@ export const comments: Comment[] = [
         replyingTo: 'maxblagun',
         user: {
           image: {
-            png: './assets/avatars/image-ramsesmiron.png',
-            webp: './assets/avatars/image-ramsesmiron.webp',
+            png: 'avatars/image-ramsesmiron.png',
+            webp: 'avatars/image-ramsesmiron.webp',
           },
           username: 'ramsesmiron',
         },
@@ -61,8 +61,8 @@ export const comments: Comment[] = [
         replyingTo: 'ramsesmiron',
         user: {
           image: {
-            png: './assets/avatars/image-juliusomo.png',
-            webp: './assets/avatars/image-juliusomo.webp',
+            png: 'avatars/image-juliusomo.png',
+            webp: 'avatars/image-juliusomo.webp',
           },
           username: 'juliusomo',
         },
