@@ -29,11 +29,11 @@ defineEmits(['confirm', 'cancel', 'blur'])
           </h2>
           <p class="tw-mt-1 tw-text-sm tw-text-gray-500">{{ props.message }}</p>
         </div>
-        <div class="tw-flex tw-justify-end">
+        <div class="tw-flex tw-justify-center tw-space-x-4">
           <VButtonSecondary @click="$emit('cancel')">{{
             props.cancelLabel
           }}</VButtonSecondary>
-          <VButtonPrimary @click="$emit('confirm')">{{
+          <VButtonPrimary type="danger" @click="$emit('confirm')">{{
             props.confirmLabel
           }}</VButtonPrimary>
         </div>
