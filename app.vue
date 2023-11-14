@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import VCommentCard from './components/Cards/VCommentCard.vue'
-import VReplyCard from './components/Cards/VReplyCard.vue'
 import VModalConfirm from './components/Modal/VModalConfirm.vue'
-import VInputText from './components/Inputs/VInputText.vue'
 import { currentUser } from './data/data'
 import { ref, computed } from 'vue'
 import { useCommentStore } from './store/comment.store'
@@ -28,12 +26,6 @@ const comments = computed(() => {
   return commentsStore.comments
 })
 
-console.log(comments.value)
-
-function handleSend() {
-  console.log('Send')
-}
-
 function toggleDeleteModal() {
   showDeleteModal.value = !showDeleteModal.value
 }
@@ -52,9 +44,7 @@ function handleDeleteReply(id: number) {
   toggleDeleteModal()
 }
 
-function handleEdit(id: number) {
-  console.log('Edit', id)
-}
+function handleEdit(id: number) {}
 
 function getCommentById(id: number): Comment | undefined {
   return comments.value.find((comment) => comment.id === id)
@@ -80,10 +70,7 @@ function handleInput(value: string) {
 }
 
 function handleReply(id: number) {
-  console.log('Reply to', id)
   const currentComment = getCommentById(id)
-  console.log('Comment', currentComment)
-
   reply.value = {
     id: getLastID() + 1,
     content: replyContent.value,
@@ -92,7 +79,6 @@ function handleReply(id: number) {
     user: currentUser,
     replyingTo: currentComment?.user?.username || '',
   }
-  console.log('Reply', replyContent.value)
   if (currentComment) {
     commentsStore.replyToComment(currentComment, reply.value)
   }
@@ -103,7 +89,6 @@ function handleReply(id: number) {
   <div
     class="tw-justify-center tw-items-center tw-flex-col tw-flex tw-m-6 tw-max-w-4xl tw-mx-auto tw-py-4"
   >
-    <VInputText :model-value="replyContent" @update:model-value="handleInput" />
     <div v-for="comment in comments">
       <VCommentCard
         :comment="comment"
